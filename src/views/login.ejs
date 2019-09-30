@@ -1,0 +1,94 @@
+<%- include('./partials/header') -%>
+
+<div class="wrapper">
+    <div class="main-panel">
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-8">
+                        <% if (message!="") {  %>
+                        <div class="alert alert-danger">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <i class="material-icons">close</i>
+                            </button>
+                            <span>
+                                <b> <%= message %> </b></span>
+                        </div>
+                        <% } %>
+                        <div class="card">
+                            <div class="card-header card-header-primary">
+                                <h4 class="card-title">Entrar</h4>
+                                <p class="card-category">Inicie una administración completa de sus productos.</p>
+                            </div>
+                            <div class="card-body">
+                                <form method="POST" action="login">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="bmd-label-floating">Login</label>
+                                                <input type="text" class="form-control" name="login">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="bmd-label-floating">Contraseña</label>
+                                                <input type="password" class="form-control" name="password">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary" data-toggle="modal"
+                                        data-target="#exampleModal">
+                                        Registrarme
+                                    </button>
+                                    <button type="submit" class="btn btn-primary pull-right">Entrar</button>
+                                    <div class="clearfix"></div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header card-header-primary">
+                            <h4 class="card-title">Registro de usuario</h4>
+                            <p class="card-category">Complete todos los campos</p>
+                        </div>
+                        <div class="card-body">
+                            <form method="POST" action="/signup">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="bmd-label-floating">Login</label>
+                                            <input type="text" class="form-control" name="login">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="bmd-label-floating">Contraseña</label>
+                                            <input type="text" class="form-control" name="password">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="submit" class="btn btn-success" value="Registrar">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('./partials/footer') -%>
