@@ -15,7 +15,7 @@ require('./src/lib/passport');
 /**
  * SETTINGS
  */
-app.set('port', process.env.PORT || 3005);
+app.set('port', process.env.PORT || 3000);
 app.set('host', '0.0.0.0');
 app.set('views', path.join(__dirname, 'src/views'));
 app.set('view engine', 'ejs');
